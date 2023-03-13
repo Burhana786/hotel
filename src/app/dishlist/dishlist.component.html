@@ -1,0 +1,16 @@
+<h1 class="text-center text-info">MENU</h1>
+
+<div class="row">
+    <div class="card mb-3 col-4" *ngFor="let i of dishes">
+        <div *ngIf="i.image">
+            <img class="card-image-top" height="300px" src="{{i.image}}" alt="Card image cap">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p class="card-text">{{i.category}}</p>
+            <p class="card-text">{{i.price}}</p>
+            <button class="btn btn-info" (click)="renderItem(i.id)">View More</button>
+            <button class="btn btn-success ml-3" (click)="renderReview(i.id)">Add Review</button>
+        </div>
+    </div>
+</div>
